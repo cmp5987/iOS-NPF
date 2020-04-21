@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Part_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ajv-5J-dIw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJD-z6-yAr">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" image="arrow.clockwise" catalog="system" id="ycC-cx-Xdr">
+                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="100" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="refreshButtonSelected:" destination="BYZ-38-t0r" id="P74-vv-ASK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="wm6-fN-tvH">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="JNq-9X-Vxg">
+                                            <rect key="frame" x="96.666666666666686" y="5.6666666666666679" width="227" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Standard"/>
+                                                <segment title="Satelite"/>
+                                                <segment title="Hybrid"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="viewSegmentSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="VaW-FD-TWp"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" autorepeat="NO" maximumValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="747-AJ-HiF">
+                                <rect key="frame" x="300" y="45" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="Mp9-X9-4cm"/>
+                                </connections>
+                            </stepper>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CJD-z6-yAr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="42V-xo-cn5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ajv-5J-dIw" secondAttribute="trailing" id="6qd-FH-aPH"/>
+                            <constraint firstItem="ajv-5J-dIw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CKP-oD-Xbg"/>
+                            <constraint firstItem="CJD-z6-yAr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="KvU-Ds-1av"/>
+                            <constraint firstItem="CJD-z6-yAr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MTU-Mv-FJZ"/>
+                            <constraint firstItem="747-AJ-HiF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="QeL-0r-MaG"/>
+                            <constraint firstItem="ajv-5J-dIw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TMh-Z9-VHx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ajv-5J-dIw" secondAttribute="bottom" id="nY7-UR-iK5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="747-AJ-HiF" secondAttribute="trailing" constant="20" id="ov6-7e-R9U"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="ajv-5J-dIw" id="o45-cl-8W3"/>
+                        <outlet property="refreshButton" destination="ycC-cx-Xdr" id="Gwy-wz-d8m"/>
+                        <outlet property="viewSegment" destination="JNq-9X-Vxg" id="QqG-y7-QOf"/>
+                        <outlet property="zoomStepper" destination="747-AJ-HiF" id="X4k-pf-rtA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="134"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+    </resources>
+</document>
