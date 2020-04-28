@@ -12,10 +12,11 @@ import CoreLocation
 class FavoritesTableViewController: UITableViewController, CLLocationManagerDelegate {
 
     @IBOutlet var table: UITableView!
-    @IBOutlet weak var editButton: UIBarButtonItem!
     
     var favoriteParks : [String] = []
     var allParks = Parks()
+    var allowDelete = false
+    
     var selectedRow:Int = -1
     //var locationManager = CLLocationManager()
     var parkList : [Park] { //front end for LandmarkList model object

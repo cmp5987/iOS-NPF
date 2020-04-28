@@ -262,11 +262,8 @@
                             <outlet property="delegate" destination="Lyc-6w-vzs" id="Ebu-Wn-2ip"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favorites" id="0Aq-NA-VSD">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="Bnq-Yl-a0R"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Favorites" id="0Aq-NA-VSD"/>
                     <connections>
-                        <outlet property="editButton" destination="Bnq-Yl-a0R" id="TQL-ye-Fxd"/>
                         <outlet property="table" destination="mbx-BJ-elr" id="dpS-m5-Huf"/>
                         <segue destination="Ze0-rk-VfW" kind="show" identifier="detail" id="kAD-66-eQx"/>
                     </connections>
