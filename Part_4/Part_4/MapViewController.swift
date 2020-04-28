@@ -54,8 +54,6 @@ class MapViewController: UIViewController {
         
         configureLocationService()
         
-
-        
     }
 
     
@@ -122,10 +120,18 @@ class MapViewController: UIViewController {
         let mkCoordinateRegion = MKCoordinateRegion(center: zloc.coordinate, latitudinalMeters: 4000000, longitudinalMeters: 4000000)
         self.mapView?.setRegion(mkCoordinateRegion, animated: true)
     }
-    
+
+    func zoomInPark(parkLocation: CLLocation){
+        tabBarController?.selectedViewController = self
+        
+        let region = MKCoordinateRegion(center: parkLocation.coordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
+        mapView.setRegion(region, animated: true)
+        //mapView.selectAnnotation(annotation, animated: true)
+    }
 
 }
 extension MapViewController: MKMapViewDelegate{
+    
     
     
     func mapView(_ mv: MKMapView, viewFor  annotation: MKAnnotation) -> MKAnnotationView? {

@@ -116,6 +116,7 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" selectedImage="map.fill" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="rLM-ru-NwY"/>
                     <connections>
                         <outlet property="mapView" destination="Frx-bO-Wx4" id="SLt-AU-AWN"/>
                         <outlet property="refreshButton" destination="Bbu-Jg-jBy" id="e0D-Sd-aSf"/>
@@ -125,13 +126,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2036.2318840579712" y="1153.125"/>
+            <point key="canvasLocation" x="-3213" y="1154"/>
         </scene>
         <!--Detailed Table View Controller-->
         <scene sceneID="nYe-5S-E9d">
             <objects>
                 <tableViewController id="Ze0-rk-VfW" customClass="DetailedTableViewController" customModule="Part_4" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RDq-uy-teF">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="50" id="RDq-uy-teF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -154,7 +155,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ihh-4f-ROV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-965" y="2711"/>
+            <point key="canvasLocation" x="-1284" y="2702"/>
         </scene>
         <!--Parks Table View Controller-->
         <scene sceneID="Jez-nu-NdH">
@@ -262,15 +263,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorites" id="0Aq-NA-VSD">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" style="plain" id="Bnq-Yl-a0R">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qR2-pC-iMF">
-                                <rect key="frame" x="302" y="7" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Edit"/>
-                            </button>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="Bnq-Yl-a0R"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="Bnq-Yl-a0R" id="TQL-ye-Fxd"/>
+                        <outlet property="table" destination="mbx-BJ-elr" id="dpS-m5-Huf"/>
                         <segue destination="Ze0-rk-VfW" kind="show" identifier="detail" id="kAD-66-eQx"/>
                     </connections>
                 </tableViewController>

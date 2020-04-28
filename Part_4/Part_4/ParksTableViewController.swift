@@ -17,6 +17,7 @@ class ParksTableViewController: UITableViewController,  CLLocationManagerDelegat
     
     
     var locationManager = CLLocationManager()
+    var selectedRow:Int = -1
     
     var allParks = Parks()
     //var locationManager = CLLocationManager()
@@ -68,8 +69,12 @@ class ParksTableViewController: UITableViewController,  CLLocationManagerDelegat
     
     //segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailView:DetailedTableViewController = segue.destination as! DetailedTableViewController
         
-
+        selectedRow = table.indexPathForSelectedRow!.row
+        let park = parkList[selectedRow]
+        
+        detailView.setPark(inPark: park)
     }
     
     

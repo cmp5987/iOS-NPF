@@ -43,8 +43,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         mapVC.allParks = p
         parksVC.allParks = p
-        
-        //parkVC.allParksTable  = p
+        favoritesVC.allParks = p
         
         
         
